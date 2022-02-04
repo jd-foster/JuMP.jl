@@ -101,6 +101,7 @@ const _PAGES = [
     "Tutorials" => [
         "Getting started" => [
             "tutorials/getting_started/introduction.md",
+            "tutorials/getting_started/getting_started_with_optimization.md",
             "tutorials/getting_started/getting_started_with_julia.md",
             "tutorials/getting_started/getting_started_with_JuMP.md",
             "tutorials/getting_started/getting_started_with_sets_and_indexing.md",
@@ -155,7 +156,7 @@ const _PAGES = [
         "Algorithms" => [
             "tutorials/algorithms/benders_decomposition.md",
             "tutorials/algorithms/cutting_stock_column_generation.md",
-            "tutorials/algorithms/tsp_lazy_constraints.md",
+            # "tutorials/algorithms/tsp_lazy_constraints.md",
         ],
         "Applications" => ["tutorials/applications/power_systems.md"],
     ],
