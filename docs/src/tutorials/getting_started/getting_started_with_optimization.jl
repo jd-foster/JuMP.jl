@@ -1,10 +1,15 @@
+## Run  `Literate.markdown("./getting_started_with_optimization.jl"; flavor=Literate.CommonMarkFlavor())` to generate this file.
 # # Getting started with optimization
 
 # Mathematical optimization, in broad terms, is about determining a point (or points) in a set on which a real-valued function obtains an optimum, that is, either a minimum value or a maximum value. In what follows, we will just consider minimization, although we could equivalently use maximization.
 
-# The general formulation of a mathematical optimization problem considers a real-valued _objective function_ ``f`` defined on a _constraint set_ ``X``, and looks to determine the values of a collection of _decision variables_ ``x = (x_1, \ldots, x_n)`` for some positive integer ``n`` such that
-# - the _point_ ``x`` is in ``X`` and 
-# -  the function evaluation ``f(x)`` is less than or equal to all possible alternatives in that set, that is, ``f(x) \le f(y)`` for all ``y`` in ``X``.
+# The general formulation of a mathematical optimization problem considers a real-valued _objective function_ ``f`` defined on an ``n``-dimensional _constraint set_ ``X`` (for some positive integer ``n``), and looks to determine an ``n``-tuple of _decision variables_ ``x = (x_1, \ldots, x_n)``  such that
+# - the _point_ ``x`` is in ``X``, 
+# -  the function evaluation ``f(x)`` is less than or equal to all possible alternatives in that set, that is,
+# ```math
+# f(x) \le f(y) \quad \text{for all $y$ in $X$}.
+# ```
+#
 
 # The constraint set ``X`` is often defined implicitly or explicitly by a set of _constraints_: a constraint is a criterion that every point in ``X`` much satisfy in order to be a member of the set. When all constraints are satisfied by a point, it is called a _feasible point_ of the problem.
 
@@ -15,20 +20,20 @@
 # ```math
 # \begin{align*}
 #    \min_{x \in \mathbb{R}^n} & \quad f_0(x) \\
-#    \;\;\text{s.t.} & \quad L_j \le f_j(x) \le U_j & j = 1 \ldots m \\
-#    & \quad l_i \le x_i \le u_i & i = 1 \ldots n.
+#    \;\;\text{s.t.} & \quad L_j \le f_j(x) \le U_j & j = 1, \ldots, m \\
+#    & \quad l_i \le x_i \le u_i & i = 1, \ldots, n.
 # \end{align*}
 # ```
-# or
+# or equivalently
 # ```math
 # \begin{align*}
 #    \min_{x \in \mathbb{R}^n} & \quad f(x) \\
-#    \;\;\text{s.t.} & \quad h_j(x)   = 0 & j = 1 \ldots m \\
-#                     & \quad g_k(x) \le 0 & k = 1 \ldots r \\
-#    & \quad l_i \le x_i \le u_i & i = 1 \ldots n.
+#    \;\;\text{s.t.} & \quad h_j(x)   = 0 & j &= 1, \ldots, m \\
+#                     & \quad g_k(x) \le 0 & k &= 1, \ldots, r \\
+#    & \quad l_i \le x_i \le u_i & i &= 1, \ldots, n.
 # \end{align*}
 # ```
-# for given objective functions ``f_0``, ``f``, _constraint functions_ ``f_j``, ``h_j`` and ``g_k`` and real vectors of _bounds_ ``l``, ``u``, ``L`` and ``U``. Both presentations can be used interchangeable in order to pose a problem in a particular optimization problem class through a choice of the relevant functions and bounds.
+# for given objective functions ``f_0`` or ``f``, given _constraint functions_ ``f_j``, ``h_j`` or ``g_k`` or real _bound_ vectors ``l``, ``u``, ``L`` or ``U``. Both presentations are used interchangeably to pose optimization models in a particular problem class.
 
 # ### Problem classes in optimization
 
